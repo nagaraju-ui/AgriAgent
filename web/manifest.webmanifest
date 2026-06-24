@@ -1,0 +1,14 @@
+{
+  "name": "AgriAgent",
+  "short_name": "AgriAgent",
+  "description": "Crop advice for farmers from real-time signals",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f8f5",
+  "theme_color": "#16903f",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,19 @@
+langgraph>=0.2
+langchain-core>=0.3
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2
+requests>=2.31
+python-dotenv>=1.0
+streamlit>=1.30
+# voice UI (speech in / speech out)
+streamlit-mic-recorder>=0.0.8
+gTTS>=2.5
+# mobile app backend (file/photo upload)
+python-multipart>=0.0.9
+# LLM (Groq and OpenAI both use this OpenAI-compatible SDK)
+openai>=1.0
+# optional (semantic RAG)
+chromadb>=0.5
+sentence-transformers>=2.2
+pytest>=8.0

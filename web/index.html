@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#16903f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon.svg">
+<link rel="stylesheet" href="/static/styles.css">
+<title>AgriAgent</title>
+</head>
+<body>
+<div id="app">
+
+  <!-- ===== HOME ===== -->
+  <section id="view-home" class="view active">
+    <header class="topbar">
+      <div>
+        <div class="hello" id="greeting">Good morning</div>
+        <div class="sub" id="today"></div>
+      </div>
+      <div class="avatar">🧑‍🌾</div>
+    </header>
+
+    <div class="card weather" id="weatherCard">
+      <div class="w-left">
+        <div class="w-temp" id="wTemp">--°</div>
+        <div class="w-cond" id="wCond">Loading…</div>
+      </div>
+      <div class="w-right">
+        <div class="w-rain" id="wRain">— mm / 7d</div>
+        <button class="link" onclick="ask('Give me crop advice for my location based on the weather')">Get Weather Advice ›</button>
+      </div>
+    </div>
+
+    <div class="section-head"><span>Market Price</span><a onclick="go('chat')">View all</a></div>
+    <div class="prices" id="prices"></div>
+
+    <div class="section-head"><span>Get Started</span></div>
+    <div class="starters">
+      <button class="starter" onclick="ask('What pests commonly affect cotton and how do I control them?')">
+        <span class="s-ic">🐛</span> Pests affecting my crops
+      </button>
+      <button class="starter" onclick="ask('Which subsidies and insurance are available for my crops?')">
+        <span class="s-ic">📄</span> Subsidies &amp; crop insurance
+      </button>
+      <button class="starter" onclick="ask('Should I sow cotton or paddy this week?')">
+        <span class="s-ic">🌱</span> What should I sow now?
+      </button>
+    </div>
+    <div class="spacer"></div>
+  </section>
+
+  <!-- ===== CHAT ===== -->
+  <section id="view-chat" class="view">
+    <header class="chatbar">
+      <button class="back" onclick="go('home')">‹</button>
+      <div class="title">AgriAgent Chat</div>
+      <select id="lang" class="lang">
+        <option value="en">EN</option>
+        <option value="te">తె</option>
+      </select>
+    </header>
+    <div class="messages" id="messages"></div>
+
+    <div id="imgPreview" class="img-preview hidden">
+      <img id="imgPreviewEl" alt="selected">
+      <button onclick="clearImg()">✕</button>
+    </div>
+
+    <form class="composer" id="composer" onsubmit="return send(event)">
+      <label class="icon-btn" title="Camera / photo">
+        📷<input id="file" type="file" accept="image/*" capture="environment" hidden onchange="onFile(this)">
+      </label>
+      <button type="button" class="icon-btn" id="micBtn" title="Speak">🎤</button>
+      <input id="text" class="text" placeholder="Ask anything…" autocomplete="off">
+      <button class="send" type="submit" title="Send">➤</button>
+    </form>
+  </section>
+
+  <!-- ===== BOTTOM NAV ===== -->
+  <nav class="bottom">
+    <button class="nav active" id="nav-home" onclick="go('home')"><span>🏠</span>Home</button>
+    <button class="nav" id="nav-chat" onclick="go('chat')"><span>💬</span>Chat</button>
+  </nav>
+
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>

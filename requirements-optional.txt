@@ -1,0 +1,13 @@
+# Optional extras — install only if you want these features.
+#   pip install -r requirements-optional.txt
+
+# Semantic RAG (heavy: pulls in PyTorch). Without it, RAG uses a keyword retriever.
+chromadb>=0.5
+sentence-transformers>=2.2
+
+# Streamlit dev/demo UIs (ui/streamlit_app.py, voice_app.py, chat_app.py)
+streamlit>=1.30
+streamlit-mic-recorder>=0.0.8
+
+# Tests
+pytest>=8.0

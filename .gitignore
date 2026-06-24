@@ -10,10 +10,11 @@ venv/
 .pytest_cache/
 .chroma/
 
-# --- node / frontend build ---
+# --- node ---
 node_modules/
 frontend/node_modules/
-frontend/dist/
+# NOTE: frontend/dist is intentionally committed so hosts (Render native Python)
+# can serve the built UI without running Node. Rebuild it before committing UI changes.
 
 # --- os / editor ---
 .DS_Store
